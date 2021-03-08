@@ -1,17 +1,129 @@
 @use "variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
 body {
-  margin: 0;
   background-color: variables.$bg;
-  color: var(--text);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+header {
+  background: #FAFAFA;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  a {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: -3px;
+    text-align: center;
+    padding: 12px;
+    width: 25%;
+    &:hover {
+      .fa-heart {
+        color: red;
+      }
+    }
+    svg {
+      color: #111;
+      font-size: 25px !important;
+    }
+  }
 }
 
-button {
-  font-size: 1.5rem;
+.container {
+  background: #FAFAFA;
+  bottom: 0;
+  padding-top: 50px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  .card {
+    background: variables.$bg;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 0 auto;
+    width: 500px;
+    .card-header {
+      font-family: 'Open Sans', sans-serif;
+      padding: 15px;
+      .profile-img {
+        background: red;
+        border-radius: 50%;
+        display: inline-block;
+        height: 30px;
+        margin-right: 5px;
+        position: relative;
+        top: 3px;
+        width: 30px;
+      }
+      .profile-info {
+        display: inline-block;
+        .name {
+          color: #111;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        .location {
+          font-size: 12px;
+          color: #111;
+        }
+      }
+      .time {
+        font-size: 10px;
+        float: right;
+        // display: inline-block;
+        top: 10px;
+        position: relative;
+      }
+    }
+    .content {
+      img {
+        width: 100%;
+      }
+    }
+    .card-footer {
+      padding: 15px;
+      box-sizing: border-box;
+      .likes {
+        color: #111;
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+      .description,
+      .comments {
+        p {
+          font-size: 14px;
+          padding: 0 0 5px 0;
+        }
+        .username {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 600;
+        }
+      }
+      form {
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        svg {
+          font-size: 24px;
+        }
+        .add-comment {
+          flex-grow: 1;
+          padding: 0 5px;
+          input {
+            width: 95%;
+            padding: 5px;
+            font-size: 16px;
+            border: 0 solid #fff;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
